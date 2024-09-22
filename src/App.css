@@ -1,38 +1,198 @@
+/* General App Styles */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  padding: 20px;
+  background-color: #fff; /* Default light mode background */
+  color: #000; /* Default text color */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #333; /* Dark mode background */
+  color: white; /* Dark mode text color */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header styling to align title and icon */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Full width for header */
+  max-width: 600px; /* Centering header */
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 2px solid #ccc;
+}
+
+/* Title styling */
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333; /* Default title color */
+}
+
+.dark-mode h1 {
+  color: white; /* Title color in dark mode */
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+/* Gold color for icons */
+.theme-toggle svg {
+  color: gold;
+}
+
+/* Todo List Container */
+.todo-list {
+  max-width: 600px;
+  width: 100%; /* Make the width responsive */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+}
+
+.dark-mode .todo-list {
+  background-color: #444;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Task Container */
+.todo-item-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff; /* Default task background */
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Full width for tasks */
+  transition: background-color 0.3s, color 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dark-mode .todo-item-container {
+  background-color: #555; /* Dark mode task background */
+  color: white;
+  border: 1px solid #888;
+}
+
+/* Flex layout for task text, checkbox, and delete button */
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Text Decoration for Completed Tasks */
+.todo-item p {
+  color: #000; /* Default text color */
+  margin: 0;
+  padding: 0;
+  transition: color 0.3s;
+}
+
+.dark-mode .todo-item p {
+  color: white; /* Change text color to white in dark mode */
+}
+
+.todo-item p.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.dark-mode .todo-item p.completed {
+  color: #bbb;
+}
+
+/* Alarm input and set button styling */
+form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Buttons Container for Add and Show History */
+.buttons-container {
+  display: flex;
+  justify-content: center; /* Center buttons */
+  margin-top: 10px;
+}
+
+/* History section styling */
+.history {
+  margin-top: 20px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%; /* Full width for history */
+}
+
+.history ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.history li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #000; /* Text color in light mode */
+}
+
+.dark-mode .history {
+  background-color: #444;
+  border: 1px solid #888;
+}
+
+.dark-mode .history li {
+  color: white; /* Text color in dark mode */
+}
+
+/* Button Styles */
+button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.dark-mode button {
+  background-color: #888;
+}
+
+.dark-mode button:hover {
+  background-color: #666;
+}
+
+/* Button to Delete Task */
+button.delete-button {
+  background-color: #ff4d4d;
+  margin-left: 10px;
+}
+
+button.delete-button:hover {
+  background-color: #e60000;
 }
